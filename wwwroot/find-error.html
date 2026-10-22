@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Найди ошибку — Объём изображения</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="find-error">
+
+<header>
+  <h1>Объём растрового изображения</h1>
+  <nav>
+    <a href="index.html" data-page="intro">1. Введение</a>
+    <a href="main.html" data-page="main">2. Основной пример</a>
+    <a href="task1.html" data-page="task1">3. Задача</a>
+    <a href="mistake.html" data-page="mistake">4. Разбор ошибки</a>
+    <a href="find-error.html" data-page="find-error">5. Найди ошибку</a>
+    <a href="sandbox.html" data-page="sandbox">6. Песочница</a>
+  </nav>
+</header>
+
+<p id="fatal" class="message bad" hidden></p>
+
+<main>
+
+  <h2>5. Найди ошибку</h2>
+
+  <div class="todo">
+    <b>Что делать на этой странице</b>
+    <ol>
+      <li>Прочитайте условие и решение ученика. В нём ошибка.</li>
+      <li>Отметьте <b>первый шаг</b>, в котором допущена ошибка.</li>
+      <li>Введите <b>правильный ответ</b> числом и нажмите «Проверить».</li>
+      <li>Нужно угадать и шаг, и ответ. После верного ответа откроется «Дальше».</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <p id="f-condition">Загрузка…</p>
+    <p><b>Решение ученика</b> (отметьте шаг с ошибкой):</p>
+    <div id="f-steps" class="choice"></div>
+    <label>Правильный ответ, в байтах <input id="f-answer" type="text" inputmode="decimal"></label>
+    <button id="f-check" type="button">Проверить</button>
+    <p id="f-message" class="message" hidden></p>
+  </div>
+
+  <div class="nav-bottom">
+    <a id="next-link" class="btn" href="sandbox.html">Дальше: песочница →</a>
+    <p id="next-hint" class="next-hint">Кнопка «Дальше» откроется после верного ответа.</p>
+  </div>
+</main>
+
+<footer>
+  <p>
+    Допущения: без сжатия и служебных данных; 1 байт = 8 бит; 1 КиБ = 1024 байта.
+    Задачи — авторские, по типовым заданиям школьного курса информатики (кодирование графической информации).
+  </p>
+</footer>
+
+<script src="common.js"></script>
+<script src="find-error.js"></script>
+</body>
+</html>

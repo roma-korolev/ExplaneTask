@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Основной пример — Объём изображения</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="main" data-section="main">
+
+<header>
+  <h1>Объём растрового изображения</h1>
+  <nav>
+    <a href="index.html" data-page="intro">1. Введение</a>
+    <a href="main.html" data-page="main">2. Основной пример</a>
+    <a href="task1.html" data-page="task1">3. Задача</a>
+    <a href="mistake.html" data-page="mistake">4. Разбор ошибки</a>
+    <a href="find-error.html" data-page="find-error">5. Найди ошибку</a>
+    <a href="sandbox.html" data-page="sandbox">6. Песочница</a>
+  </nav>
+</header>
+
+<p id="fatal" class="message bad" hidden></p>
+
+<main>
+
+  <h2>2. Основной пример: разбор по шагам</h2>
+
+  <div class="todo">
+    <b>Что делать на этой странице</b>
+    <ol>
+      <li>При желании задайте свои числа (при смене чисел разбор начнётся сначала).</li>
+      <li>Прочитайте шаг и ответьте на вопрос в синей рамке. Нажмите «Проверить».</li>
+      <li>Если ответ неверный — прочитайте объяснение и попробуйте ещё раз.</li>
+      <li>После верного ответа откроется кнопка «Следующий шаг». «Сначала» начинает разбор заново.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="inputs">
+      <label>Ширина, пикс. <input id="m-width" type="number" value="32" min="1"></label>
+      <label>Высота, пикс. <input id="m-height" type="number" value="16" min="1"></label>
+      <label>Цветов в палитре <input id="m-colors" type="number" value="16" min="2"></label>
+    </div>
+    <p id="error" class="message bad" hidden></p>
+  </div>
+
+  <div class="card">
+    <div id="box"></div>
+    <div class="buttons">
+      <button id="next" type="button" disabled>Следующий шаг</button>
+      <button id="reset" type="button" class="secondary">Сначала</button>
+    </div>
+    <p id="next-step-hint" class="next-hint"></p>
+  </div>
+
+  <div class="nav-bottom">
+    <a id="next-link" class="btn" href="task1.html">Дальше: задача →</a>
+    <p id="next-hint" class="next-hint">Кнопка «Дальше» откроется, когда вы пройдёте все шаги разбора.</p>
+  </div>
+</main>
+
+<footer>
+  <p>
+    Допущения: без сжатия и служебных данных; 1 байт = 8 бит; 1 КиБ = 1024 байта.
+    Задачи — авторские, по типовым заданиям школьного курса информатики (кодирование графической информации).
+  </p>
+</footer>
+
+<script src="common.js"></script>
+<script src="walkthrough.js"></script>
+</body>
+</html>

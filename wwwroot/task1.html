@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Задача — Объём изображения</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="task1">
+
+<header>
+  <h1>Объём растрового изображения</h1>
+  <nav>
+    <a href="index.html" data-page="intro">1. Введение</a>
+    <a href="main.html" data-page="main">2. Основной пример</a>
+    <a href="task1.html" data-page="task1">3. Задача</a>
+    <a href="mistake.html" data-page="mistake">4. Разбор ошибки</a>
+    <a href="find-error.html" data-page="find-error">5. Найди ошибку</a>
+    <a href="sandbox.html" data-page="sandbox">6. Песочница</a>
+  </nav>
+</header>
+
+<p id="fatal" class="message bad" hidden></p>
+
+<main>
+
+  <h2>3. Задача для самостоятельного решения</h2>
+
+  <div class="todo">
+    <b>Что делать на этой странице</b>
+    <ol>
+      <li>Прочитайте условие и решите задачу в тетради (как в основном примере).</li>
+      <li>Введите ответ <b>числом</b> и нажмите «Проверить».</li>
+      <li>Если ответ неверный, вы увидите, в чём ошибка. Исправьте и проверьте ещё раз — попыток сколько угодно.</li>
+      <li>После верного ответа откроется кнопка «Дальше».</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <p id="t1-text" class="task-text">Загрузка…</p>
+    <label>Ответ <input id="t1-answer" type="text" inputmode="decimal"></label>
+    <button id="t1-check" type="button">Проверить</button>
+    <p id="t1-message" class="message" hidden></p>
+    <div id="t1-solution-box" hidden>
+      <p class="small">Решение:</p>
+      <div id="t1-solution" class="solution"></div>
+    </div>
+    <p id="t1-help" class="small" hidden>Не получается? Нажмите:
+      <button id="t1-show" type="button" class="secondary">Показать решение</button></p>
+  </div>
+
+  <div class="nav-bottom">
+    <a id="next-link" class="btn" href="mistake.html">Дальше: разбор ошибки →</a>
+    <p id="next-hint" class="next-hint">Кнопка «Дальше» откроется после верного ответа (или после просмотра решения).</p>
+  </div>
+</main>
+
+<footer>
+  <p>
+    Допущения: без сжатия и служебных данных; 1 байт = 8 бит; 1 КиБ = 1024 байта.
+    Задачи — авторские, по типовым заданиям школьного курса информатики (кодирование графической информации).
+  </p>
+</footer>
+
+<script src="common.js"></script>
+<script src="task1.js"></script>
+</body>
+</html>

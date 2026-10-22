@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Песочница — Объём изображения</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="sandbox">
+
+<header>
+  <h1>Объём растрового изображения</h1>
+  <nav>
+    <a href="index.html" data-page="intro">1. Введение</a>
+    <a href="main.html" data-page="main">2. Основной пример</a>
+    <a href="task1.html" data-page="task1">3. Задача</a>
+    <a href="mistake.html" data-page="mistake">4. Разбор ошибки</a>
+    <a href="find-error.html" data-page="find-error">5. Найди ошибку</a>
+    <a href="sandbox.html" data-page="sandbox">6. Песочница</a>
+  </nav>
+</header>
+
+<p id="fatal" class="message bad" hidden></p>
+
+<main>
+
+  <h2>6. Песочница</h2>
+
+  <div class="todo">
+    <b>Что делать на этой странице</b>
+    <ol>
+      <li>Нажмите «Случайная задача» (или выберите тип задачи).</li>
+      <li>Решите задачу, введите ответ числом, нажмите «Проверить». Засчитывается <b>первая</b> попытка.</li>
+      <li>После ответа вы увидите решение. Нажмите «Следующая задача».</li>
+      <li>Можно загрузить свою картинку и получить по ней две задачи (ниже).</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h4>Ваша статистика</h4>
+    <div id="s-stats">Загрузка…</div>
+  </div>
+
+  <div class="card">
+    <div class="buttons">
+      <button id="s-random" type="button">Случайная задача</button>
+      <button id="s-depth" type="button" class="secondary">Задача: глубина по палитре</button>
+      <button id="s-volume" type="button" class="secondary">Задача: объём по размерам</button>
+    </div>
+
+    <p id="s-text" class="task-text">Нажмите кнопку выше, чтобы получить задачу.</p>
+    <label>Ответ <input id="s-answer" type="text" inputmode="decimal"></label>
+    <button id="s-check" type="button">Проверить</button>
+    <p id="s-message" class="message" hidden></p>
+    <div id="s-solution-box" hidden>
+      <p class="small">Решение:</p>
+      <div id="s-solution" class="solution"></div>
+      <div class="buttons"><button id="s-again" type="button">Следующая задача</button></div>
+    </div>
+  </div>
+
+  <h3>Своя картинка</h3>
+  <div class="card">
+    <p>
+      1) Выберите файл (PNG, GIF, JPEG, BMP, WebP). 2) Нажмите одну из двух кнопок — задача появится в рамке выше.
+      Файл никуда не сохраняется: сервер лишь считает цвета. Размер — до 4 млн пикселей.
+    </p>
+    <input id="s-file" type="file" accept="image/*">
+    <p id="s-image-message" class="message" hidden></p>
+    <img id="s-preview" alt="Загруженная картинка" hidden>
+    <div class="buttons">
+      <button id="s-img-depth" type="button" class="secondary" disabled>Задача 1 по картинке: глубина цвета</button>
+      <button id="s-img-volume" type="button" class="secondary" disabled>Задача 2 по картинке: объём</button>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>
+    Допущения: без сжатия и служебных данных; 1 байт = 8 бит; 1 КиБ = 1024 байта.
+    Задачи — авторские, по типовым заданиям школьного курса информатики (кодирование графической информации).
+  </p>
+</footer>
+
+<script src="common.js"></script>
+<script src="sandbox.js"></script>
+</body>
+</html>

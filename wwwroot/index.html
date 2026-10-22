@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Введение — Объём изображения</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="intro">
+
+<header>
+  <h1>Объём растрового изображения</h1>
+  <nav>
+    <a href="index.html" data-page="intro">1. Введение</a>
+    <a href="main.html" data-page="main">2. Основной пример</a>
+    <a href="task1.html" data-page="task1">3. Задача</a>
+    <a href="mistake.html" data-page="mistake">4. Разбор ошибки</a>
+    <a href="find-error.html" data-page="find-error">5. Найди ошибку</a>
+    <a href="sandbox.html" data-page="sandbox">6. Песочница</a>
+  </nav>
+</header>
+
+<p id="fatal" class="message bad" hidden></p>
+
+<main>
+
+  <h2>1. Введение</h2>
+
+  <div class="todo">
+    <b>Что делать на этой странице</b>
+    <ol>
+      <li>Прочитайте объяснение и пример 1.</li>
+      <li>Поиграйте с числами в рамке «Пример 1»: меняйте размер и палитру и смотрите, как меняются цифры. Нажимайте на пиксели.</li>
+      <li>Выполните задание «Предскажите» внизу. После верного ответа откроется кнопка «Дальше».</li>
+    </ol>
+  </div>
+
+  <p>
+    Растровое изображение — это сетка пикселей. У каждого пикселя свой цвет из <b>палитры</b>.
+    Компьютер хранит не сам цвет, а его <b>номер в палитре</b>, записанный несколькими битами.
+    Число бит на один пиксель называется <b>глубиной цвета</b> (i).
+  </p>
+  <p>
+    i бит позволяют записать 2<sup>i</sup> разных номеров, поэтому для палитры из N цветов нужно
+    <b>наименьшее i, при котором 2<sup>i</sup> ≥ N</b>. Объём изображения:
+    <b>ширина × высота × i</b> бит. В 1 байте 8 бит, в 1 КиБ 1024 байта.
+    Сжатие и служебные данные мы не учитываем.
+  </p>
+
+  <h3>Пример 1: палитра из 4 цветов</h3>
+  <p>
+    Четыре цвета получают номера 0, 1, 2, 3 — в двоичном виде 00, 01, 10, 11. Значит, i = 2 бита.
+    Изображение 4×4 — это 16 пикселей, то есть 16 × 2 = 32 бита = 4 байта.
+  </p>
+
+  <div class="card">
+    <p class="small">Измените числа — цифры внизу пересчитаются. Красным выделено то, что изменилось.</p>
+    <div class="inputs">
+      <label>Ширина, пикс. <input id="v-width" type="number" value="4" min="1"></label>
+      <label>Высота, пикс. <input id="v-height" type="number" value="4" min="1"></label>
+      <label>Цветов в палитре <input id="v-colors" type="number" value="4" min="2"></label>
+    </div>
+    <p id="v-error" class="message bad" hidden></p>
+
+    <h4>Палитра (номер цвета — его двоичный код)</h4>
+    <div id="v-palette" class="palette"></div>
+
+    <h4>Изображение (нажмите на любой пиксель)</h4>
+    <p id="v-grid-note" class="small"></p>
+    <div id="v-grid" class="grid"></div>
+
+    <h4>Выбранный пиксель (увеличен)</h4>
+    <div class="selected-pixel">
+      <div id="v-selected-box" class="big-pixel"></div>
+      <p id="v-selected-text" class="pre"></p>
+    </div>
+
+    <h4>Расчёт</h4>
+    <div id="v-info"></div>
+  </div>
+
+  <h3>Попробуйте предсказать</h3>
+  <div class="card">
+    <p id="p-now" class="pre"></p>
+    <p>
+      <b>Задание:</b> выберите, что изменить, <b>сначала посчитайте сами</b>, каким станет новый объём
+      изображения в <b>битах</b>, и введите ответ. Если ответ верный, изменение применится в рамке выше.
+    </p>
+    <label>Что изменить:
+      <select id="p-change">
+        <option value="width">ширину ×2</option>
+        <option value="both">и ширину, и высоту ×2</option>
+        <option value="colors2">число цветов ×2</option>
+        <option value="colorsSquare">число цветов: N → N²</option>
+      </select>
+    </label>
+    <br>
+    <label>Новый объём, бит <input id="p-answer" type="text" inputmode="decimal"></label>
+    <button id="p-check" type="button">Проверить</button>
+    <p id="p-message" class="message" hidden></p>
+  </div>
+
+  <div class="nav-bottom">
+    <a id="next-link" class="btn" href="main.html">Дальше: основной пример →</a>
+    <p id="next-hint" class="next-hint">Кнопка «Дальше» откроется после верного ответа в задании «Предскажите».</p>
+  </div>
+</main>
+
+<footer>
+  <p>
+    Допущения: без сжатия и служебных данных; 1 байт = 8 бит; 1 КиБ = 1024 байта.
+    Задачи — авторские, по типовым заданиям школьного курса информатики (кодирование графической информации).
+  </p>
+</footer>
+
+<script src="common.js"></script>
+<script src="intro.js"></script>
+</body>
+</html>
